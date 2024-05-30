@@ -39,6 +39,11 @@ const config: HardhatUserConfig = {
       accounts: [process.env.WALLET_PRIVATE_KEY || ""],
       chainId: 200810,
     },
+    coredao: {
+      url: "https://core.drpc.org",
+      accounts: [process.env.WALLET_PRIVATE_KEY || ""],
+      chainId: 1116,
+    }
   },
   etherscan: {
     apiKey: {
@@ -47,6 +52,7 @@ const config: HardhatUserConfig = {
       merlin_test: "abc",
       bitlayer: "abc",
       bitlayer_test: "abc",
+      coredao: process.env.COREDAO_API_KEY || "abc",
     },
     customChains: [
       {
@@ -79,6 +85,14 @@ const config: HardhatUserConfig = {
         urls: {
           apiURL: "https://api-testnet.btrscan.com/scan/api",
           browserURL: "https://testnet.btrscan.com/",
+        },
+      },
+      {
+        network: "coredao",
+        chainId: 1116,
+        urls: {
+          apiURL: "https://openapi.coredao.org/api",
+          browserURL: "https://scan.coredao.org/",
         },
       },
     ],

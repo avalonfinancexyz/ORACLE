@@ -48,11 +48,19 @@ const bitlayerTestChainAddressConfig: addressConfig = {
   USDTFeed: "0xa4886beb14e27bc6de4a504eb43e1a7b20961fa4",
 };
 
+const coredaoChainAddressConfig: addressConfig = {
+  PriceUpdater: "0x6717dc0d87a9bd6849f96948c29e8c8875c10096",
+  BTCFeed: "0x1280036a9da98f35536c7ef07a78c97b38d10e40",
+  USDCFeed: "0xe05e46a42d05fcad5fa52f443d5963635aaf7a06",
+  USDTFeed: "0x2be335322f05aff78e4b231c9f175cba9ae31729",
+};
+
 export const AddressConfig: { [key: number]: addressConfig } = {
   4200: merlinChainAddressConfig,
   686868: merlinTestChainAddressConfig,
   200901: bitlayerChainAddressConfig,
   200810: bitlayerTestChainAddressConfig,
+  1116: coredaoChainAddressConfig,
 };
 
 export const merlinPoolAddresses = {
