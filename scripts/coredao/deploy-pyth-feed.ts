@@ -1,11 +1,11 @@
 import hre from "hardhat";
-import { priceIdsUSD, pythContracts } from "../utils/constants";
-import { publicClient, walletClient } from "../chains/merlin";
+import { priceIdsUSD, pythContracts } from "../../utils/constants";
+import { publicClient, walletClient } from "../../chains/coredao";
 
 async function main() {
-  const args = [pythContracts.merlin];
+  const args = [pythContracts.coredao, priceIdsUSD.usdt];
 
-  const contract = await hre.viem.deployContract("PythUpdater", args, {
+  const contract = await hre.viem.deployContract("PythAggregatorV3", args, {
     publicClient: publicClient,
     walletClient: walletClient,
   });

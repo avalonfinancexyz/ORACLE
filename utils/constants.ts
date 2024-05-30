@@ -5,11 +5,13 @@ export const priceIdsUSD = {
   btc: "0xe62df6c8b4a85fe1a67db44dc12de5db330f7ac66b72dc658afedf0f4a415b43",
   ordi: "0x193c739db502aadcef37c2589738b1e37bdb257d58cf1ab3c7ebc8e6df4e3ec0",
   merl: "0x03e8dbf3e8f02edf5ca898dc7afbbac3f06c7d91c02986c3a8c6ce1a99e90355",
+  core: "0x9b4503710cc8c53f75c30e6e4fda1a7064680ef2e0ee97acd2e3a7c37b3c830c",
 };
 
 export const pythContracts = {
   merlin: "0xA2aa501b19aff244D90cc15a4Cf739D2725B5729",
   merlin_test: "0xA2aa501b19aff244D90cc15a4Cf739D2725B5729",
+  coredao: "0xA2aa501b19aff244D90cc15a4Cf739D2725B5729"
 };
 
 interface addressConfig {
@@ -49,10 +51,16 @@ const bitlayerTestChainAddressConfig: addressConfig = {
 };
 
 const coredaoChainAddressConfig: addressConfig = {
-  PriceUpdater: "0x6717dc0d87a9bd6849f96948c29e8c8875c10096",
-  BTCFeed: "0x1280036a9da98f35536c7ef07a78c97b38d10e40",
-  USDCFeed: "0xe05e46a42d05fcad5fa52f443d5963635aaf7a06",
-  USDTFeed: "0x2be335322f05aff78e4b231c9f175cba9ae31729",
+  TempPriceUpdater: "0x6717dc0d87a9bd6849f96948c29e8c8875c10096",
+  TempBTCFeed: "0x1280036a9da98f35536c7ef07a78c97b38d10e40",
+  TempUSDCFeed: "0xe05e46a42d05fcad5fa52f443d5963635aaf7a06",
+  TempUSDTFeed: "0x2be335322f05aff78e4b231c9f175cba9ae31729",
+
+  PriceUpdater: "0xe2d6aff025076f82a07221783b6dd3c30944906b",
+  COREFeed: "0x6b0e702586c6091af8da8ab64710916f0a58b72f",
+  BTCFeed: "0x167bf0f73b7606eb5f5ebde59a30a0a25828837c",
+  USDCFeed: "0x6361b75086d28c45bc5b5529cdfcc71a3b3b54c4",
+  USDTFeed: "0x2efb68fa0c4fc0a16537ff0af09d86005c267946",
 };
 
 export const AddressConfig: { [key: number]: addressConfig } = {

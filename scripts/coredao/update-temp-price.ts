@@ -18,7 +18,7 @@ async function main() {
   const chainId = await publicClient.getChainId();
   const contract = await hre.viem.getContractAt(
     "OracleUpdater",
-    AddressConfig[chainId].PriceUpdater,
+    AddressConfig[chainId].TempPriceUpdater,
     {
       publicClient: publicClient,
       walletClient: walletClient,
