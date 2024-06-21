@@ -11,7 +11,7 @@ export const priceIdsUSD = {
 export const pythContracts = {
   merlin: "0xA2aa501b19aff244D90cc15a4Cf739D2725B5729",
   merlin_test: "0xA2aa501b19aff244D90cc15a4Cf739D2725B5729",
-  coredao: "0xA2aa501b19aff244D90cc15a4Cf739D2725B5729"
+  coredao: "0xA2aa501b19aff244D90cc15a4Cf739D2725B5729",
 };
 
 interface addressConfig {
@@ -22,6 +22,7 @@ const merlinChainAddressConfig: addressConfig = {
   BTCFeed: "0x6717dc0d87a9bd6849f96948c29e8c8875c10096",
   ETHFeed: "0x1280036a9da98f35536c7ef07a78c97b38d10e40",
   ORDIFeed: "0xfF7013Bc8123f801957e67bDE37BCAB222daf181",
+  MERLFeed: "0x7c8cacdf03f842e883bb3a09811b5d04405f8ea8",
   PriceUpdater: "0x0cf6f1b8e611196bb0df2fadef63790cc6ba84da",
   merlinOracle: "0x9a41af73568d3a3a5b217df4e9dc270c23767efd",
 };
@@ -74,4 +75,6 @@ export const AddressConfig: { [key: number]: addressConfig } = {
 export const merlinPoolAddresses = {
   MP: "0x115c8d0f3701686f42a60e1ec8f0b6649855117c",
   MNER: "0x224988674102f0680169bffb4f29c928771fa1cd",
+  DOG: "0x27f666c544a3a92ec2b88857a36a87672429ef2f",
+  BITMAP: "0x501ca56e4b6af84cbaaaaf2731d7c87bed32ee65",
 };
