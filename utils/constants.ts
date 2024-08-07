@@ -6,12 +6,14 @@ export const priceIdsUSD = {
   ordi: "0x193c739db502aadcef37c2589738b1e37bdb257d58cf1ab3c7ebc8e6df4e3ec0",
   merl: "0x03e8dbf3e8f02edf5ca898dc7afbbac3f06c7d91c02986c3a8c6ce1a99e90355",
   core: "0x9b4503710cc8c53f75c30e6e4fda1a7064680ef2e0ee97acd2e3a7c37b3c830c",
+  klay: "0xde5e6ef09931fecc7fdd8aaa97844e981f3e7bb1c86a6ffc68e9166bb0db3743",
 };
 
 export const pythContracts = {
   merlin: "0xA2aa501b19aff244D90cc15a4Cf739D2725B5729",
   merlin_test: "0xA2aa501b19aff244D90cc15a4Cf739D2725B5729",
   coredao: "0xA2aa501b19aff244D90cc15a4Cf739D2725B5729",
+  klaytn: "0x2880aB155794e7179c9eE2e38200202908C17B43",
 };
 
 interface addressConfig {
@@ -64,12 +66,34 @@ const coredaoChainAddressConfig: addressConfig = {
   USDTFeed: "0x2efb68fa0c4fc0a16537ff0af09d86005c267946",
 };
 
+const klaytnChainAddressConfig: addressConfig = {
+  // TempPriceUpdater: "0x6717dc0d87a9bd6849f96948c29e8c8875c10096",
+  // TempBTCFeed: "0x1280036a9da98f35536c7ef07a78c97b38d10e40",
+  // TempUSDCFeed: "0xe05e46a42d05fcad5fa52f443d5963635aaf7a06",
+  // TempUSDTFeed: "0x2be335322f05aff78e4b231c9f175cba9ae31729",
+
+  PriceUpdater: "0xe05e46a42d05fcad5fa52f443d5963635aaf7a06",
+  KLAYFeed: "0x9cc5a6ac600f9558c9f1651d5bd140ce9b56344a",
+  BTCFeed: "0x1280036a9da98f35536c7ef07a78c97b38d10e40",
+};
+
+const arbitrumChainAddressConfig: addressConfig = {
+  API3DAIProxy: "0x4B4Eb1B421e3d21E0dCf61b041da5D99363Ba8a5",
+  API3BTCProxy: "0x8b4834d9F0B8A10F2ecB6b70514078D57A678A65",
+  API3USDTProxy: "0x52e2b919AE123b49249283735e6Ef9F5a6e8FC7d",
+  API3WBTCProxy: "0xE53154CFCc333200a0EC4CB6C206b1a5a1432d21",
+  API3ETHProxy: "0xf624881ac131210716F7708C28403cCBe346cB73",
+  API3USDCProxy: "0xd2279D1c54f5bAE0197221Dc9cdA4fb7F64Dd55D",
+};
+
 export const AddressConfig: { [key: number]: addressConfig } = {
   4200: merlinChainAddressConfig,
   686868: merlinTestChainAddressConfig,
   200901: bitlayerChainAddressConfig,
   200810: bitlayerTestChainAddressConfig,
   1116: coredaoChainAddressConfig,
+  42161: arbitrumChainAddressConfig,
+  8217: klaytnChainAddressConfig,
 };
 
 export const merlinPoolAddresses = {

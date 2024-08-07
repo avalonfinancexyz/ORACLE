@@ -1,9 +1,11 @@
+import { arbitrum } from "./node_modules/viem/chains/definitions/arbitrum";
 import { HardhatUserConfig } from "hardhat/config";
 import "hardhat-deploy";
 import "@gelatonetwork/web3-functions-sdk/hardhat-plugin";
 import "@nomicfoundation/hardhat-toolbox-viem";
 import "@nomiclabs/hardhat-ethers";
 // import "@nomiclabs/hardhat-etherscan";
+import "hardhat-dependency-compiler";
 import dotenv from "dotenv";
 dotenv.config();
 
@@ -14,7 +16,9 @@ const config: HardhatUserConfig = {
   },
   solidity: "0.8.24",
   defaultNetwork: "merlin",
-
+  dependencyCompiler: {
+    paths: ["@api3/contracts/v0.8/interfaces"],
+  },
   networks: {
     hardhat: {
       accounts: [],
@@ -43,7 +47,17 @@ const config: HardhatUserConfig = {
       url: "https://core.drpc.org",
       accounts: [process.env.WALLET_PRIVATE_KEY || ""],
       chainId: 1116,
-    }
+    },
+    arbitrumOne: {
+      url: "https://arb1.arbitrum.io/rpc",
+      accounts: [process.env.WALLET_PRIVATE_KEY || ""],
+      chainId: 42161,
+    },
+    klaytn: {
+      url: "https://public-en-cypress.klaytn.net",
+      accounts: [process.env.WALLET_PRIVATE_KEY || ""],
+      chainId: 8217,
+    },
   },
   etherscan: {
     apiKey: {
@@ -52,7 +66,9 @@ const config: HardhatUserConfig = {
       merlin_test: "abc",
       bitlayer: "abc",
       bitlayer_test: "abc",
+      klaytn: "abc",
       coredao: process.env.COREDAO_API_KEY || "abc",
+      arbitrumOne: process.env.ARB_API_KEY || "abc",
     },
     customChains: [
       {
@@ -93,6 +109,14 @@ const config: HardhatUserConfig = {
         urls: {
           apiURL: "https://openapi.coredao.org/api",
           browserURL: "https://scan.coredao.org/",
+        },
+      },
+      {
+        network: "klaytn",
+        chainId: 8217,
+        urls: {
+          apiURL: "https://api-cypress.klaytnscope.com/api",
+          browserURL: "https://klaytnscope.com/",
         },
       },
     ],
