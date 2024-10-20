@@ -23,6 +23,11 @@ const config: HardhatUserConfig = {
     hardhat: {
       accounts: [],
     },
+    main: {
+      url: "https://eth.meowrpc.com",
+      accounts: [process.env.WALLET_PRIVATE_KEY || ""],
+      chainId: 1,
+    },
     merlin: {
       url: "https://rpc.merlinchain.io",
       accounts: [process.env.WALLET_PRIVATE_KEY || ""],
@@ -58,19 +63,34 @@ const config: HardhatUserConfig = {
       accounts: [process.env.WALLET_PRIVATE_KEY || ""],
       chainId: 8217,
     },
+    iotex: {
+      url: "https://babel-api.mainnet.iotex.io",
+      accounts: [process.env.WALLET_PRIVATE_KEY || ""],
+      chainId: 4689,
+    },
   },
   etherscan: {
     apiKey: {
+      main: process.env.ETHERSCAN_KEY || "abc",
       manta: process.env.MERLIN_API_KEY || "abc",
       merlin: "abc",
       merlin_test: "abc",
       bitlayer: "abc",
       bitlayer_test: "abc",
       klaytn: "abc",
+      iotex: "abc",
       coredao: process.env.COREDAO_API_KEY || "abc",
       arbitrumOne: process.env.ARB_API_KEY || "abc",
     },
     customChains: [
+      {
+        network: "main",
+        chainId: 1,
+        urls: {
+          apiURL: "https://api.etherscan.io/api",
+          browserURL: "https://etherscan.io/",
+        },
+      },
       {
         network: "merlin",
         chainId: 4200,
@@ -117,6 +137,14 @@ const config: HardhatUserConfig = {
         urls: {
           apiURL: "https://api-cypress.klaytnscope.com/api",
           browserURL: "https://klaytnscope.com/",
+        },
+      },
+      {
+        network: "iotex",
+        chainId: 4689,
+        urls: {
+          apiURL: "https://iotexscout.io/api",
+          browserURL: "https://iotexscan.io/",
         },
       },
     ],
